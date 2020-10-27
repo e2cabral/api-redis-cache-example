@@ -3,8 +3,6 @@ import {RedisClient} from "../../db-cache/redis";
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export const checkCache = (req: Request, res: Response, next: NextFunction) => {
-
-
   RedisClient.get(req.route.path, (err, data) => {
     if (err) {
       console.log(err);
